@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Smashburger Boxx · Old school smashburgers · Hudson, NY</title>
+<meta name="description" content="The Smashburger Boxx: old school smashburgers, crispy fries and vanilla shakes from a red-and-white box at 93 Ten Broeck Ave, Hudson, NY. Open Thursday to Sunday, 2 to 8 PM. Order ahead for pickup.">
+<meta name="theme-color" content="#1a1714">
+<meta property="og:title" content="The Smashburger Boxx · Hudson, NY">
+<meta property="og:description" content="Old school smashburgers from $4.50. Thu–Sun, 2–8 PM. 93 Ten Broeck Ave.">
+<meta property="og:image" content="img/ig-burger-window.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23c8201a'/%3E%3Ctext x='32' y='43' font-family='Arial Black,Arial' font-weight='900' font-size='26' fill='%23fbf7f0' text-anchor='middle'%3ESB%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Restaurant","name":"The Smashburger Boxx","servesCuisine":"Burgers","priceRange":"$","address":{"@type":"PostalAddress","streetAddress":"93 Ten Broeck Ave","addressLocality":"Hudson","addressRegion":"NY","postalCode":"12534","addressCountry":"US"},"geo":{"@type":"GeoCoordinates","latitude":42.248684,"longitude":-73.7653485},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Thursday","Friday","Saturday","Sunday"],"opens":"14:00","closes":"20:00"}],"sameAs":["https://www.instagram.com/smashburgerboxx/"]}
+</script>
+</head>
+<body>
+<a class="skip" href="#menu">Skip to the menu</a>
+<div class="concept-flag" role="note">Concept redesign preview · not affiliated with The Smashburger Boxx · online ordering here is a demo</div>
+
+<header class="nav" id="top">
+  <div class="nav__inner">
+    <a class="brand" href="#top" aria-label="The Smashburger Boxx, back to top">
+      <span class="brand__the">The</span>
+      <span class="brand__name">Smashburger <b>Boxx</b></span>
+    </a>
+    <nav class="nav__links" aria-label="Main">
+      <a href="#menu">Menu</a>
+      <a href="#build">Build a burger</a>
+      <a href="#story">The Boxx</a>
+      <a href="#visit">Hours &amp; directions</a>
+    </nav>
+    <div class="nav__actions">
+      <span class="status" data-status><span class="status__dot"></span><span class="status__txt">Checking hours…</span></span>
+      <button class="btn btn--red btn--sm" type="button" data-open-bag>
+        <span>Order</span><span class="bag-count" data-bag-count hidden>0</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- HERO: the smash (scroll-scrubbed) -->
+<section class="hero" id="hero" aria-label="The smash">
+  <div class="hero__pin">
+    <div class="hero__copy">
+      <p class="kicker">Old school smashburgers · Hudson, New York</p>
+      <h1 class="hero__title">
+        <span class="t-line">Smashed hard.</span>
+        <span class="t-line t-serif"><em>Crispy edges.</em></span>
+        <span class="t-line">Every single order.</span>
+      </h1>
+      <ol class="hero__steps" aria-label="How a smashburger is made">
+        <li class="is-on" data-step="0"><b>01</b> A ball of beef hits a screaming-hot griddle.</li>
+        <li data-step="1"><b>02</b> Smash it flat. The edges go lacy and crisp.</li>
+        <li data-step="2"><b>03</b> Cheese, pickles, secret sauce, soft potato bun.</li>
+      </ol>
+      <div class="hero__ctas">
+        <a class="btn btn--red btn--lg" href="#menu">Order for pickup</a>
+        <a class="btn btn--ghost btn--lg" href="#build">Build your burger</a>
+      </div>
+      <p class="hero__meta"><span>Burgers from <b>$4.50</b></span><span>Thu–Sun · 2–8 PM</span><span>93 Ten Broeck Ave</span></p>
+    </div>
+
+    <div class="griddle" aria-hidden="true">
+      <svg class="griddle__svg" viewBox="60 150 520 455" role="presentation">
+        <defs>
+          <linearGradient id="steel" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#3b3835"/><stop offset=".45" stop-color="#23211f"/><stop offset="1" stop-color="#141312"/>
+          </linearGradient>
+          <linearGradient id="sheen" x1="0" x2="1">
+            <stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".09"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+          </linearGradient>
+          <radialGradient id="heat" cx=".5" cy=".55" r=".5">
+            <stop offset="0" stop-color="#ff6a2a" stop-opacity=".28"/><stop offset="1" stop-color="#ff6a2a" stop-opacity="0"/>
+          </radialGradient>
+          <radialGradient id="raw" cx=".4" cy=".35" r=".75">
+            <stop offset="0" stop-color="#d9707a"/><stop offset=".55" stop-color="#b34a55"/><stop offset="1" stop-color="#7d2a33"/>
+          </radialGradient>
+          <radialGradient id="seared" cx=".45" cy=".4" r=".7">
+            <stop offset="0" stop-color="#7a4220"/><stop offset=".6" stop-color="#5a2e14"/><stop offset="1" stop-color="#2e160a"/>
+          </radialGradient>
+          <filter id="meat" x="-20%" y="-20%" width="140%" height="140%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="4" result="n"/>
+            <feColorMatrix in="n" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1.1 -.1" result="grain"/>
+            <feComposite in="grain" in2="SourceGraphic" operator="in" result="g2"/>
+            <feBlend in="SourceGraphic" in2="g2" mode="multiply"/>
+          </filter>
+          <filter id="lace" x="-30%" y="-40%" width="160%" height="180%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="3" seed="9" result="t"/>
+            <feDisplacementMap in="SourceGraphic" in2="t" scale="26" xChannelSelector="R" yChannelSelector="G"/>
+          </filter>
+          <linearGradient id="splash" x1="0" x2="1"><stop offset="0" stop-color="#5a5752"/><stop offset=".3" stop-color="#a19d97"/><stop offset=".55" stop-color="#6c6964"/><stop offset=".8" stop-color="#9b9791"/><stop offset="1" stop-color="#4d4a46"/></linearGradient>
+          <linearGradient id="lip" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#7c7872"/><stop offset="1" stop-color="#2c2a27"/></linearGradient>
+          <radialGradient id="seasoned" cx=".5" cy=".55" r=".6"><stop offset="0" stop-color="#000" stop-opacity="0"/><stop offset=".7" stop-color="#0a0806" stop-opacity=".4"/><stop offset="1" stop-color="#000" stop-opacity=".8"/></radialGradient>
+          <radialGradient id="ballhi" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#fff" stop-opacity=".45"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+          <radialGradient id="crust" cx=".5" cy=".5" r=".5"><stop offset=".78" stop-color="#6b3514"/><stop offset=".92" stop-color="#3b1a07"/><stop offset="1" stop-color="#2a1204"/></radialGradient>
+          <filter id="blur6"><feGaussianBlur stdDeviation="6"/></filter>
+          <linearGradient id="press" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0" stop-color="#d9d6d1"/><stop offset=".5" stop-color="#9c9893"/><stop offset="1" stop-color="#5d5a56"/>
+          </linearGradient>
+          <linearGradient id="cheeseG" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#ffcb3d"/><stop offset="1" stop-color="#f0a511"/>
+          </linearGradient>
+        </defs>
+
+        <!-- griddle plate in 3/4 view -->
+        <g class="g-plate">
+          <path d="M60 236 L580 236 L592 300 L48 300 Z" fill="url(#splash)"/>
+          <path d="M48 298 L592 298 L596 304 L44 304 Z" fill="#8d8983"/>
+          <path d="M44 304 L596 304 L640 466 L0 466 Z" fill="url(#steel)"/>
+          <path d="M44 304 L596 304 L640 466 L0 466 Z" fill="url(#seasoned)" opacity=".7"/>
+          <path d="M140 304 L250 304 L190 466 L60 466 Z" fill="url(#sheen)"/>
+          <path d="M0 466 L640 466 L640 474 L0 474 Z" fill="#b9b5ae"/>
+          <path d="M0 474 L640 474 L640 500 L0 500 Z" fill="url(#lip)"/>
+          <ellipse class="g-heat" cx="320" cy="392" rx="260" ry="70" fill="url(#heat)"/>
+        </g>
+
+        <!-- grease shimmer + shadow -->
+        <ellipse class="g-shadow" cx="320" cy="400" rx="80" ry="16" fill="#000" opacity=".45" filter="url(#blur6)"/>
+
+        <!-- lacy crust (appears on smash) -->
+        <ellipse class="g-lace" cx="320" cy="394" rx="192" ry="52" fill="url(#crust)" filter="url(#lace)" opacity="0"/>
+
+        <!-- the patty: starts as a ball -->
+        <g class="g-patty">
+          <ellipse class="g-patty-edge" cx="320" cy="366" rx="78" ry="62" fill="#2a1409" opacity="0"/>
+          <ellipse class="g-patty-raw" cx="320" cy="360" rx="78" ry="62" fill="url(#raw)" filter="url(#meat)"/>
+          <ellipse class="g-patty-sear" cx="320" cy="360" rx="78" ry="62" fill="url(#seared)" filter="url(#meat)" opacity="0"/>
+          <ellipse class="g-ball-hi" cx="298" cy="334" rx="34" ry="20" fill="url(#ballhi)"/>
+        </g>
+
+        <!-- cheese slice -->
+        <g class="g-cheese" opacity="0">
+          <path class="g-cheese-flat" d="M240 358 L400 358 L424 410 L216 410 Z" fill="url(#cheeseG)"/>
+          <path class="g-cheese-melt" d="M228 366 L412 366 Q434 390 428 414 Q420 432 404 420 Q392 410 378 422 L264 422 Q250 434 236 420 Q222 406 212 416 Q206 390 228 366 Z" fill="url(#cheeseG)" opacity="0"/>
+        </g>
+
+        <!-- sizzle droplets -->
+        <g class="g-sizzle" fill="#f6c77a">
+          <circle cx="320" cy="390" r="3"/><circle cx="320" cy="390" r="2.2"/><circle cx="320" cy="390" r="2.6"/>
+          <circle cx="320" cy="390" r="1.8"/><circle cx="320" cy="390" r="2.4"/><circle cx="320" cy="390" r="2"/>
+          <circle cx="320" cy="390" r="3"/><circle cx="320" cy="390" r="1.6"/><circle cx="320" cy="390" r="2.2"/>
+          <circle cx="320" cy="390" r="2.8"/>
+        </g>
+
+        <!-- steam -->
+        <g class="g-steam" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="7" opacity="0" filter="url(#blur6)">
+          <path d="M270 330 C250 290 290 270 268 226 C250 190 280 170 270 140"/>
+          <path d="M330 330 C312 286 352 264 330 214 C314 176 344 150 332 118"/>
+          <path d="M392 330 C372 292 410 272 392 230 C378 196 402 178 394 150"/>
+        </g>
+
+        <!-- the press -->
+        <g class="g-press">
+          <rect x="300" y="-60" width="40" height="150" rx="10" fill="#1d1b19"/>
+          <rect x="296" y="60" width="48" height="34" rx="6" fill="#2b2826"/>
+          <ellipse cx="320" cy="108" rx="150" ry="30" fill="#6f6b66"/>
+          <path d="M170 108 L470 108 L470 124 Q320 170 170 124 Z" fill="url(#press)"/>
+          <ellipse cx="320" cy="106" rx="150" ry="28" fill="url(#press)"/>
+          <ellipse cx="290" cy="100" rx="70" ry="9" fill="#fff" opacity=".25"/>
+        </g>
+      </svg>
+      <figure class="griddle__photo">
+        <img src="img/ig-burger-window.jpg" alt="" width="1080" height="1080" fetchpriority="high">
+      </figure>
+      <p class="griddle__cap">Illustration: the smash. Photo: The Smashburger Boxx on Instagram.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Proof strip -->
+<section class="proof" aria-label="At a glance">
+  <div class="checker" aria-hidden="true"></div>
+  <ul class="proof__list">
+    <li><b>4.6<span aria-hidden="true">★</span></b><span>on Google Maps<br><small>26 reviews · Sept 26, 2026</small></span></li>
+    <li><b>$4.50</b><span>for a Single Smash<br><small>doubles from $7</small></span></li>
+    <li><b>$5</b><span>adds fries + a drink<br><small>to any burger</small></span></li>
+    <li><b>Thu–Sun</b><span>2 to 8 PM<br><small>walk-up window</small></span></li>
+  </ul>
+</section>
+
+<!-- MENU + ORDERING -->
+<section class="menu" id="menu" aria-labelledby="menu-h">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="kicker">Order ahead · pickup at the window</p>
+      <h2 id="menu-h">The menu is short <em>on purpose.</em></h2>
+      <p class="sec-lede">Four smashburgers, crispy fries, a vanilla shake. Every burger comes with pickles and secret sauce; lettuce, tomato and onions are yours for the asking.</p>
+      <div class="menu__tools">
+        <div class="today" data-today></div>
+        <button class="chip chip--reorder" type="button" data-reorder hidden>↻ Reorder last order</button>
+      </div>
+    </header>
+
+    <nav class="cats" aria-label="Menu categories" data-cats></nav>
+    <div class="menu__grid" data-menu></div>
+
+    <aside class="deal" aria-label="Meal deal">
+      <div class="deal__img"><img src="img/gm-box-meal.jpg" alt="Two smashburgers, fries and a drink packed in a takeout box" loading="lazy" width="1050" height="1400"></div>
+      <div class="deal__copy">
+        <p class="kicker kicker--light">The deal on the board</p>
+        <h3>Add fries + a drink <em>for $5.</em></h3>
+        <p>Make any burger a meal. It's on every burger in the order flow, one tap.</p>
+        <button class="btn btn--cream" type="button" data-open-item="double-cheese">Start with a Double Cheese</button>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- BUILD-YOUR-OWN STACKER -->
+<section class="build" id="build" aria-labelledby="build-h">
+  <div class="wrap build__grid">
+    <div class="build__stage">
+      <div class="stack" data-stack aria-hidden="true"></div>
+      <div class="build__price" aria-live="polite"><span>Your burger</span><b data-build-price>$4.50</b><small data-build-name>Single Smash</small></div>
+    </div>
+    <div class="build__panel">
+      <p class="kicker">Build your burger</p>
+      <h2 id="build-h">Stack it <em>your way.</em></h2>
+      <p class="sec-lede">Real menu, real prices. Pick your patties and cheese; the price updates as you build.</p>
+
+      <fieldset class="bfs">
+        <legend>Patties</legend>
+        <div class="seg" data-build-patties>
+          <button type="button" data-v="1" aria-pressed="true">1</button>
+          <button type="button" data-v="2" aria-pressed="false">2</button>
+          <button type="button" data-v="3" aria-pressed="false">3</button>
+          <button type="button" data-v="4" aria-pressed="false">4</button>
+        </div>
+        <p class="hint">A 3rd or 4th patty is the "extra patty" add-on, +$2.50 each.</p>
+      </fieldset>
+      <fieldset class="bfs">
+        <legend>Cheese</legend>
+        <div class="seg" data-build-cheese>
+          <button type="button" data-v="0" aria-pressed="false">No cheese</button>
+          <button type="button" data-v="1" aria-pressed="true">Cheese <small>+$.50</small></button>
+        </div>
+      </fieldset>
+      <fieldset class="bfs">
+        <legend>Toppings <span>included</span></legend>
+        <div class="pills" data-build-tops></div>
+      </fieldset>
+      <fieldset class="bfs">
+        <legend>Load it up</legend>
+        <div class="pills" data-build-adds></div>
+      </fieldset>
+      <div class="build__cta">
+        <button class="btn btn--red btn--lg" type="button" data-build-add>Add to bag · <span data-build-price2>$5.00</span></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="story" id="story" aria-labelledby="story-h">
+  <div class="wrap">
+    <header class="sec-head sec-head--center">
+      <p class="kicker">The Boxx</p>
+      <h2 id="story-h">A red-and-white box <em>on Ten Broeck.</em></h2>
+    </header>
+    <div class="story__grid">
+      <figure class="ph ph--tall"><img src="img/gm-boxx-closeup.jpg" alt="The Smashburger Boxx: a converted shipping container with a red-and-white striped awning and cartoon burger murals" loading="lazy" width="1050" height="1400"><figcaption>The window, the awning, the murals.</figcaption></figure>
+      <div class="story__copy">
+        <p class="lead">Same address as Hudson Bagels. Same family.</p>
+        <p>The smashburger started as a weekday lunch special at Hudson Bagels in January 2025, after months of testing the beef blend, the pickle and a small-batch sauce. It grew into its own spot: a walk-up box on the Hudson Bagels lot with picnic tables out front.</p>
+        <p class="quote">“No shortcuts—just a proper smash burger made fresh every single order.”<span>The Smashburger Boxx, on Instagram</span></p>
+      </div>
+      <figure class="ph"><img src="img/gm-tray-picnic.jpg" alt="A tray of smashburgers and fries on a red picnic table" loading="lazy" width="1050" height="1400"><figcaption>A tray for the table.</figcaption></figure>
+      <figure class="ph"><img src="img/gm-picnic-tables.jpg" alt="Red picnic tables under umbrellas next to the blue building" loading="lazy" width="1050" height="1400"><figcaption>Grab a picnic table.</figcaption></figure>
+      <figure class="ph"><img src="img/ig-burger-shake-mural.jpg" alt="A double cheeseburger with lettuce, tomato and onion held up in front of the Boxx's mural" loading="lazy" width="1080" height="1080"><figcaption>Stacked, smashed, sauced.</figcaption></figure>
+      <figure class="ph"><img src="img/ig-burger-stacked.jpg" alt="A double cheeseburger in a checkered wrapper held in front of the striped awning" loading="lazy" width="1080" height="1210"><figcaption>Crispy edges. Melty cheese.</figcaption></figure>
+    </div>
+    <p class="src-note">History: Trixie's List (Jan 2025) and The Soft Spot (Jul 2025). Photos: The Smashburger Boxx on Instagram and photos on its Google Maps listing.</p>
+  </div>
+</section>
+
+<!-- VISIT -->
+<section class="visit" id="visit" aria-labelledby="visit-h">
+  <div class="wrap visit__grid">
+    <div class="visit__copy">
+      <p class="kicker kicker--light">Hours &amp; directions</p>
+      <h2 id="visit-h">Thursday to Sunday, <em>2 to 8.</em></h2>
+      <table class="hours" data-hours aria-label="Weekly hours"></table>
+      <p class="hours__src">Hours from the Google and Bing listings, Sept 26, 2026. Schedule changes get posted on Instagram.</p>
+      <address>93 Ten Broeck Ave<br>Hudson, NY 12534</address>
+      <p class="visit__sub">On the Hudson Bagels lot, just off Union Turnpike.</p>
+      <div class="visit__ctas">
+        <a class="btn btn--red" href="https://www.google.com/maps/dir/?api=1&amp;destination=The+Smashburger+Boxx%2C+93+Ten+Broeck+Ave%2C+Hudson%2C+NY+12534" target="_blank" rel="noopener">Get directions</a>
+        <a class="btn btn--ghost-light" href="https://www.instagram.com/smashburgerboxx/" target="_blank" rel="noopener">@smashburgerboxx</a>
+      </div>
+    </div>
+    <div class="visit__map">
+      <iframe title="Map: The Smashburger Boxx, 93 Ten Broeck Ave, Hudson NY" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=The%20Smashburger%20Boxx%2C%2093%20Ten%20Broeck%20Ave%2C%20Hudson%2C%20NY%2012534&amp;z=16&amp;output=embed"></iframe>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="checker" aria-hidden="true"></div>
+  <div class="wrap foot__grid">
+    <div>
+      <p class="brand brand--foot"><span class="brand__the">The</span><span class="brand__name">Smashburger <b>Boxx</b></span></p>
+      <p>Simple. Smashed. Delicious.</p>
+    </div>
+    <div>
+      <p>93 Ten Broeck Ave, Hudson, NY 12534<br>Thu–Sun 2–8 PM · Mon–Wed closed</p>
+      <p><a href="https://www.instagram.com/smashburgerboxx/" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.google.com/maps/search/?api=1&amp;query=The+Smashburger+Boxx%2C+93+Ten+Broeck+Ave%2C+Hudson%2C+NY+12534" target="_blank" rel="noopener">Google Maps</a></p>
+    </div>
+    <div class="foot__legal">
+      <p>Concept redesign preview by a website studio. Not affiliated with or endorsed by The Smashburger Boxx. Online ordering on this page is a working demo: no order is sent and no payment is taken. Menu and prices come from the business's posted menu board and may have changed.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Mobile sticky action bar -->
+<nav class="mbar" aria-label="Quick actions">
+  <a class="mbar__btn" href="https://www.google.com/maps/dir/?api=1&amp;destination=The+Smashburger+Boxx%2C+93+Ten+Broeck+Ave%2C+Hudson%2C+NY+12534" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>Directions</a>
+  <button class="mbar__order" type="button" data-open-bag>
+    <span class="mbar__l"><span data-mbar-label>Start an order</span><small data-mbar-sub>Pickup · ready in minutes</small></span>
+    <span class="mbar__r" data-mbar-total></span>
+  </button>
+</nav>
+
+<!-- Item modal -->
+<div class="modal" data-modal hidden>
+  <div class="modal__scrim" data-close-modal></div>
+  <div class="modal__card" role="dialog" aria-modal="true" aria-labelledby="modal-title" tabindex="-1">
+    <button class="x" type="button" data-close-modal aria-label="Close">×</button>
+    <div class="modal__body" data-modal-body></div>
+    <div class="modal__foot">
+      <div class="qty" data-modal-qty>
+        <button type="button" data-q="-1" aria-label="Decrease quantity">−</button><output data-q-val>1</output><button type="button" data-q="1" aria-label="Increase quantity">+</button>
+      </div>
+      <button class="btn btn--red btn--block" type="button" data-modal-add>Add to bag · <span data-modal-price>$0.00</span></button>
+    </div>
+  </div>
+</div>
+
+<!-- Bag / checkout drawer -->
+<div class="drawer" data-drawer hidden>
+  <div class="drawer__scrim" data-close-bag></div>
+  <aside class="drawer__panel" role="dialog" aria-modal="true" aria-labelledby="drawer-title" tabindex="-1">
+    <header class="drawer__head">
+      <button class="back" type="button" data-back hidden aria-label="Back to bag">←</button>
+      <h2 id="drawer-title" data-drawer-title>Your bag</h2>
+      <button class="x" type="button" data-close-bag aria-label="Close">×</button>
+    </header>
+    <div class="drawer__body" data-drawer-body></div>
+    <footer class="drawer__foot" data-drawer-foot></footer>
+  </aside>
+</div>
+<div class="toast" data-toast role="status" aria-live="polite"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="data.js"></script>
+<script src="order.js"></script>
+<script src="story.js"></script>
+</body>
+</html>
