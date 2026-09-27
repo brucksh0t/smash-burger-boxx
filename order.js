@@ -283,7 +283,7 @@
     const t = totals(); const last = load(LS.last, null);
     if (!cart.length) {
       return {
-        body: `<div class="empty"><div class="empty__art" aria-hidden="true">${stackIcon({ burger: true, patties: 2, cheese: true })}</div><h3>Your bag is empty</h3><p>Four smashburgers, fries and a shake. Start with the classic.</p>
+        body: `<div class="empty"><div class="empty__art" aria-hidden="true"><img src="img/ig-burger-stacked.jpg" alt="" class="empty__photo"></div><h3>Your bag is empty</h3><p>Four smashburgers, fries and a shake. Start with the classic.</p>
           <button class="btn btn--red" type="button" data-open-item="double-cheese">Double Cheese Smash · $7.50</button>
           ${last ? `<button class="btn btn--ghost" type="button" data-reorder>↻ Reorder last order (${last.items.length} item${last.items.length > 1 ? 's' : ''})</button>` : ''}</div>`,
         foot: ''
@@ -508,21 +508,20 @@
     const line = buildToLine(); const price = lineUnit(line); const it = itemById(line.itemId);
     $('[data-build-price]').textContent = money(price); $('[data-build-price2]').textContent = money(price);
     $('[data-build-name]').textContent = it.name + (B.patties > 2 ? ` + ${B.patties - 2} extra patt${B.patties - 2 > 1 ? 'ies' : 'y'}` : '');
-    const L = []; // top → bottom
-    L.push('bun-t');
-    if (B.tops.includes('sauce')) L.push('sauce');
-    if (B.tops.includes('lettuce')) L.push('lettuce');
-    if (B.tops.includes('tomato')) L.push('tomato');
-    if (B.tops.includes('onions')) L.push('onion');
-    if (B.adds.mushrooms) L.push('mush');
-    if (B.adds.sauteed) L.push('sauteed');
-    for (let i = 0; i < B.patties; i++) { if (B.cheese) L.push('cheese'); L.push('patty'); }
-    if (B.tops.includes('pickles')) L.push('pickles');
-    L.push('bun-b');
-    const st = $('[data-stack]'); const prev = st.children.length;
-    st.innerHTML = L.map((c, i) => `<i class="ly ly--${c}" style="--i:${i};z-index:${100 - i}"></i>`).join('');
-    st.style.setProperty('--n', L.length);
-    if (prev) { st.classList.remove('pop'); void st.offsetWidth; st.classList.add('pop'); }
+    const st = $('[data-stack]');
+    if (st) {
+      const topsSummary = [
+        ...B.tops.map(t => D.toppings.find(x => x.id === t)?.name),
+        ...Object.keys(B.adds).filter(a => B.adds[a]).map(a => D.addons.find(x => x.id === a)?.name)
+      ].filter(Boolean).join(' · ');
+      st.innerHTML = `
+        <div class="build__photo-wrap">
+          <img src="${it.img || 'img/ig-burger-stacked.jpg'}" alt="${esc(it.name)}" class="build__photo">
+          <div class="build__badge">${esc(topsSummary || 'Classic smash')}</div>
+        </div>
+      `;
+      st.classList.remove('pop'); void st.offsetWidth; st.classList.add('pop');
+    }
   }
   function initBuild() {
     $('[data-build-tops]').innerHTML = D.toppings.map(t => `<button type="button" class="pill" data-bt="${t.id}" aria-pressed="${B.tops.includes(t.id)}">${esc(t.name)}</button>`).join('');
