@@ -53,18 +53,18 @@
       start: () => `top ${document.querySelector('.nav').offsetHeight}px`,
       end: ctx.conditions.desk ? '+=220%' : '+=170%',
       pin: '.hero__pin',
-      scrub: 0.3,
+      scrub: 0.2,
       anticipatePin: 1,
       onUpdate: self => {
         const p = self.progress;
-        const stepIdx = p < 0.32 ? 0 : p < 0.65 ? 1 : p < 0.86 ? 2 : 3;
+        const stepIdx = p < 0.25 ? 0 : p < 0.55 ? 1 : p < 0.85 ? 2 : 3;
         setStep(Math.min(2, stepIdx));
         updateBadge(stepIdx);
 
         if (vid && vid.duration) {
-          // Scrub through video frames cleanly
-          const duration = vid.duration;
-          vid.currentTime = Math.min(duration - 0.05, p * duration);
+          // Clamps and locks on the finished burger from 0.85 to 1.0 (cannot scroll forward past it)
+          const clampedP = Math.min(1.0, p / 0.86);
+          vid.currentTime = Math.max(0, clampedP * (vid.duration - 0.05));
         }
       }
     });
