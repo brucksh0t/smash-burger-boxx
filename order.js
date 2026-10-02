@@ -119,7 +119,8 @@
   function itemThumb(it) {
     if (it.img) return it.img;
     if (it.burger) return 'img/ig-burger-stacked.jpg';
-    return 'img/ig-burger-fries-sign.jpg';
+    if (it.id === 'shake') return 'img/menu-vanilla-shake.jpg';
+    return 'img/gm-box-fries-drink.jpg';
   }
   function renderMenu() {
     $('[data-cats]').innerHTML = D.categories.map((c, i) => `<a href="#cat-${c.id}" class="cat${i ? '' : ' is-on'}">${esc(c.name)}</a>`).join('') + '<a href="#build" class="cat">Build your own</a>';

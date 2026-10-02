@@ -1,0 +1,20 @@
+{
+  "textTransform": "none",
+  "h1Text": "Smashed hard. Crispy edges. Every single order.",
+  "hasVideo": false,
+  "sources": [],
+  "photos": [
+    "img/ig-burger-window.jpg",
+    "img/ig-burger-stacked.jpg",
+    "img/gm-tray-picnic.jpg",
+    "img/ig-burger-sign.jpg"
+  ],
+  "shakeImg": "img/menu-vanilla-shake.jpg",
+  "orderH": 44,
+  "orderW": 78.296875,
+  "orderMinH": "44px",
+  "orderPad": "12px 20px",
+  "btnClass": "btn btn--red btn--nav-order",
+  "caption": "Photos: The Smashburger Boxx on Instagram & Google Maps",
+  "heroHasSmashVideo": false
+}

@@ -56,7 +56,7 @@ window.SBB = {
       img: 'img/gm-box-fries-drink.jpg',
       desc: 'A side of crispy fries.' },
     { id: 'shake', cat: 'sides', name: 'Vanilla Milkshake', price: 599,
-      img: 'img/ig-burger-fries-sign.jpg',
+      img: 'img/menu-vanilla-shake.jpg',
       desc: 'A vanilla shake to go with it.' }
   ]
 };
