@@ -19,12 +19,11 @@ Online ordering on this site is a working **demo**: nothing is sent to the kitch
 | img/gm-*.jpg | Photos on The Smashburger Boxx's Google Maps listing (contributor not shown in the limited public view) |
 
 **No stock images are used. No SVG/CSS food illustrations.**
-| img/menu-vanilla-shake.jpg | Cropped from the Milkshakes section of img/gm-menu-board.jpg (menu-board product art) |
 | img/smash-video.mp4 / .webm | Photoreal cinematic smash sequence (240 frames @ 30fps) for GSAP ScrollTrigger scrub; also mirrored under approval/illustrative/ |
 | img/griddle-step1.jpg … step4.jpg | Key-frame posters from the smash sequence (beef → smash → cheese → finished); step4 is the reduced-motion still |
 
 Live hero uses scroll-scrubbed photoreal video (`img/smash-video.webm` / `.mp4`) via GSAP ScrollTrigger. Reduced-motion / no-GSAP shows `img/griddle-step4.jpg` (finished still, no scrub). Caption: "Photoreal smash sequence · scroll to scrub."
-Menu cards and build preview use Instagram / Google Maps photos only (shake thumb is the menu-board crop above).
+Menu cards and build preview use Instagram / Google Maps photos only; the vanilla milkshake intentionally has no thumbnail because no real shake photo is available.
 
 ## Demo assumptions (not business claims)
 - Prep time for "ready in ~X min": 10 min base + 1.5 min per burger beyond two, capped at 30.

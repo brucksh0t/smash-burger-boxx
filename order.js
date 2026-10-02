@@ -119,18 +119,20 @@
   function itemThumb(it) {
     if (it.img) return it.img;
     if (it.burger) return 'img/ig-burger-stacked.jpg';
-    if (it.id === 'shake') return 'img/menu-vanilla-shake.jpg';
-    return 'img/gm-box-fries-drink.jpg';
+    if (it.id === 'fries') return 'img/gm-box-fries-drink.jpg';
+    return '';
   }
   function renderMenu() {
     $('[data-cats]').innerHTML = D.categories.map((c, i) => `<a href="#cat-${c.id}" class="cat${i ? '' : ' is-on'}">${esc(c.name)}</a>`).join('') + '<a href="#build" class="cat">Build your own</a>';
     $('[data-menu]').innerHTML = D.categories.map(c => `
       <div class="menu__cat" id="cat-${c.id}">
         <h3 class="menu__cath">${esc(c.name)}</h3>
-        <ul class="items">${D.items.filter(i => i.cat === c.id).map(it => `
+        <ul class="items">${D.items.filter(i => i.cat === c.id).map(it => {
+          const thumb = itemThumb(it);
+          return `
           <li>
-            <button class="item${it.img ? ' item--img' : ''}" type="button" data-open-item="${it.id}" aria-label="${esc(it.name)}, ${money(it.price)}. Customize and add">
-              <span class="item__img"><img src="${itemThumb(it)}" alt="" loading="lazy"></span>
+            <button class="item${thumb ? ' item--img' : ''}" type="button" data-open-item="${it.id}" aria-label="${esc(it.name)}, ${money(it.price)}. Customize and add">
+              ${thumb ? `<span class="item__img"><img src="${thumb}" alt="" loading="lazy"></span>` : ''}
               <span class="item__txt">
                 <span class="item__name">${esc(it.name)}${it.popular ? ' <em class="tag">Most loaded</em>' : ''}</span>
                 <span class="item__desc">${esc(it.desc)}</span>
@@ -138,7 +140,8 @@
               <span class="item__price">${money(it.price)}</span>
               <span class="item__add" aria-hidden="true">+</span>
             </button>
-          </li>`).join('')}
+          </li>`;
+        }).join('')}
         </ul>
       </div>`).join('');
   }
@@ -164,8 +167,9 @@
     mState = preset ? JSON.parse(JSON.stringify(preset)) : { itemId: id, qty: 1, tops: D.toppings.filter(t => t.std).map(t => t.id), addons: {}, meal: false, note: '' };
     mState.editing = preset ? preset.uid : null;
     const body = $('[data-modal-body]');
+    const thumb = itemThumb(it);
     body.innerHTML = `
-      <div class="m-hero m-hero--img"><img src="${itemThumb(it)}" alt=""></div>
+      ${thumb ? `<div class="m-hero m-hero--img"><img src="${thumb}" alt=""></div>` : ''}
       <h3 id="modal-title">${esc(it.name)}</h3>
       <p class="m-desc">${esc(it.desc)} <b>${money(it.price)}</b></p>
       ${it.burger ? `
