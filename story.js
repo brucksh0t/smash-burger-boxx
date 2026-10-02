@@ -1,5 +1,5 @@
-/* Hero scrollytelling: the smash. GSAP + ScrollTrigger, scrubbed to scroll with realistic video.
- * Reduced motion (or no GSAP): video plays or shows the finished frame statically. */
+/* Hero scrollytelling: photoreal smash video scrubbed to scroll.
+ * Reduced motion / no GSAP: show the finished still (no play, no scrub). */
 (function () {
   'use strict';
   const root = document.documentElement;
@@ -17,33 +17,30 @@
   ];
 
   function updateBadge(stepIndex) {
-    if (badge && stepLabels[stepIndex]) {
-      badge.textContent = stepLabels[stepIndex];
-    }
+    if (badge && stepLabels[stepIndex]) badge.textContent = stepLabels[stepIndex];
   }
 
-  if (reduce) {
+  function showFinalStill() {
     root.classList.add('no-motion');
     setStep(2);
     updateBadge(3);
     if (vid) {
-      vid.pause();
-      vid.currentTime = vid.duration ? vid.duration * 0.8 : 0;
+      try { vid.pause(); } catch (_) {}
+      vid.removeAttribute('autoplay');
     }
-    return;
   }
 
-  if (!window.gsap || !window.ScrollTrigger) {
-    root.classList.add('no-motion');
-    setStep(2);
+  if (reduce || !window.gsap || !window.ScrollTrigger) {
+    showFinalStill();
     return;
   }
 
   gsap.registerPlugin(ScrollTrigger);
-
-  // When video loads metadata, ensure it can be scrubbed
   if (vid) {
-    vid.pause();
+    try { vid.pause(); } catch (_) {}
+    const toStart = () => { try { vid.currentTime = 0; } catch (_) {} };
+    if (vid.readyState >= 1) toStart();
+    else vid.addEventListener('loadedmetadata', toStart, { once: true });
   }
 
   const mm = gsap.matchMedia();
@@ -60,9 +57,8 @@
         const stepIdx = p < 0.25 ? 0 : p < 0.55 ? 1 : p < 0.85 ? 2 : 3;
         setStep(Math.min(2, stepIdx));
         updateBadge(stepIdx);
-
         if (vid && vid.duration) {
-          // Clamps and locks on the finished burger from 0.85 to 1.0 (cannot scroll forward past it)
+          // Lock on finished burger from ~0.85 → 1.0
           const clampedP = Math.min(1.0, p / 0.86);
           vid.currentTime = Math.max(0, clampedP * (vid.duration - 0.05));
         }

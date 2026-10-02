@@ -1,0 +1,18 @@
+{
+  "hasVideo": true,
+  "videoSrcs": [
+    "http://127.0.0.1:8765/img/smash-video.webm",
+    "http://127.0.0.1:8765/img/smash-video.mp4"
+  ],
+  "hasSvgGriddle": false,
+  "hasMiniStack": false,
+  "menuImgs": [
+    "img/ig-burger-sign.jpg",
+    "img/ig-burger-window.jpg",
+    "img/ig-burger-shake-mural.jpg",
+    "img/ig-burger-stacked.jpg",
+    "img/gm-box-fries-drink.jpg",
+    "img/ig-burger-fries-sign.jpg"
+  ],
+  "preload": "metadata"
+}

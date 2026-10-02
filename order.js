@@ -116,11 +116,10 @@
   }
 
   /* ---------- Menu render ---------- */
-  function stackIcon(it) {
-    if (!it.burger) return '';
-    let h = '<span class="mini-stack" aria-hidden="true"><i class="ms-bun-t"></i>';
-    for (let p = 0; p < it.patties; p++) h += (it.cheese ? '<i class="ms-cheese"></i>' : '') + '<i class="ms-patty"></i>';
-    return h + '<i class="ms-bun-b"></i></span>';
+  function itemThumb(it) {
+    if (it.img) return it.img;
+    if (it.burger) return 'img/ig-burger-stacked.jpg';
+    return 'img/ig-burger-fries-sign.jpg';
   }
   function renderMenu() {
     $('[data-cats]').innerHTML = D.categories.map((c, i) => `<a href="#cat-${c.id}" class="cat${i ? '' : ' is-on'}">${esc(c.name)}</a>`).join('') + '<a href="#build" class="cat">Build your own</a>';
@@ -130,7 +129,7 @@
         <ul class="items">${D.items.filter(i => i.cat === c.id).map(it => `
           <li>
             <button class="item${it.img ? ' item--img' : ''}" type="button" data-open-item="${it.id}" aria-label="${esc(it.name)}, ${money(it.price)}. Customize and add">
-              ${it.img ? `<span class="item__img"><img src="${it.img}" alt="" loading="lazy"></span>` : stackIcon(it) || '<span class="mini-shake" aria-hidden="true"></span>'}
+              <span class="item__img"><img src="${itemThumb(it)}" alt="" loading="lazy"></span>
               <span class="item__txt">
                 <span class="item__name">${esc(it.name)}${it.popular ? ' <em class="tag">Most loaded</em>' : ''}</span>
                 <span class="item__desc">${esc(it.desc)}</span>
@@ -165,7 +164,7 @@
     mState.editing = preset ? preset.uid : null;
     const body = $('[data-modal-body]');
     body.innerHTML = `
-      <div class="m-hero${it.img ? ' m-hero--img' : ''}">${it.img ? `<img src="${it.img}" alt="">` : (stackIcon(it) || '<span class="mini-shake mini-shake--lg"></span>')}</div>
+      <div class="m-hero m-hero--img"><img src="${itemThumb(it)}" alt=""></div>
       <h3 id="modal-title">${esc(it.name)}</h3>
       <p class="m-desc">${esc(it.desc)} <b>${money(it.price)}</b></p>
       ${it.burger ? `
@@ -340,8 +339,8 @@
         ${prefs.mode === 'delivery' ? `<label class="field"><span>Delivery address</span><input name="addr" autocomplete="street-address" required value="${esc(prefs.addr)}" placeholder="Street, town"><em class="err" hidden>Add a delivery address.</em></label>` : ''}
         <label class="check"><input type="checkbox" name="sms" ${prefs.sms ? 'checked' : ''}><span>Text me when it's ready</span></label>
         <div class="pay">
-          <b>Payment</b>
-          <p>In a live launch, this step hands off to the shop's payment processor (Square, Stripe or Toast), so card details never touch this site. <strong>This demo takes no payment.</strong></p>
+          <b>Payment · SpotOn Order (demo)</b>
+          <p>In a live launch, checkout hands off to <strong>SpotOn Order</strong> (Hudson Bagels family already uses SpotOn), so card details never touch this site. <strong>This demo takes no payment</strong> and sends nothing to the kitchen.</p>
         </div>
       </form>
       ${sumHTML(t)}`;
@@ -414,21 +413,15 @@
 
   /* ---------- submitOrder(): the ONE place a real backend plugs in ----------
    * The browser never holds secret keys. A live launch posts `order` to a tiny server endpoint
-   * (Cloudflare Worker / Netlify Function / Vercel route), which then talks to the shop's provider:
+   * (Cloudflare Worker / Netlify Function / Vercel route), which then talks to the shop's provider.
+   * Primary: SpotOn Order (Hudson Bagels family POS — same operator).
    *
-   *  • Square (Online ordering / POS):
-   *      server: POST /v2/orders (Orders API, location_id = the Boxx) with line_items + modifiers,
-   *      fulfillments: [{ type: 'PICKUP', pickup_details: { pickup_at, recipient: {display_name, phone_number} } }]
-   *      then POST /v2/online-checkout/payment-links with that order_id → return { redirectUrl }.
-   *      Tickets print on the Square KDS/printer automatically. (Or collect card with the Web Payments SDK.)
-   *  • Stripe Checkout:
-   *      server: stripe.checkout.sessions.create({ mode:'payment', line_items (price_data per line incl. tax/tip),
-   *      metadata: { orderJSON }, success_url }) → return { redirectUrl: session.url };
-   *      a webhook (checkout.session.completed) forwards the ticket to the kitchen (email/SMS/printer).
-   *  • Toast:
-   *      Toast Orders API (partner integration, restaurantExternalId + menu GUIDs mapped from data.js ids):
-   *      POST /orders/v2/prices to validate, then POST /orders/v2/orders with diningOption = Takeout
-   *      and promisedDate = pickup time; payment via Toast's hosted checkout.
+   *  • SpotOn Order (primary):
+   *      Map data.js item/modifier ids to SpotOn menu items; server creates the order via SpotOn
+   *      online ordering / payment link for the location; tickets land on SpotOn POS/KDS.
+   *      Card details stay on SpotOn. This demo never calls SpotOn.
+   *  • Other processors (only if SpotOn is not used): Square Online / Stripe Checkout / Toast Orders
+   *      can be swapped behind the same contract — not the planned path for this shop.
    *  Contract: resolve { ok, number, readyAt, redirectUrl? }; if redirectUrl is present, send the guest there.
    */
   async function submitOrder(order) {
