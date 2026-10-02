@@ -20,9 +20,10 @@ Online ordering on this site is a working **demo**: nothing is sent to the kitch
 
 **No stock images are used. No SVG/CSS food illustrations.**
 | img/menu-vanilla-shake.jpg | Cropped from the Milkshakes section of img/gm-menu-board.jpg (menu-board product art) |
-| approval/illustrative/* | Generated/illustrative smash video & frames — **not used on the live page**; kept for reference only |
+| img/smash-video.mp4 / .webm | Photoreal cinematic smash sequence (240 frames @ 30fps) for GSAP ScrollTrigger scrub; also mirrored under approval/illustrative/ |
+| img/griddle-step1.jpg … step4.jpg | Key-frame posters from the smash sequence (beef → smash → cheese → finished); step4 is the reduced-motion still |
 
-Live hero uses a scroll-crossfaded sequence of real Instagram / Google Maps photos (ig-burger-window, ig-burger-stacked, gm-tray-picnic, ig-burger-sign). Reduced-motion shows ig-burger-stacked.jpg. Caption: "Photos: The Smashburger Boxx on Instagram & Google Maps."
+Live hero uses scroll-scrubbed photoreal video (`img/smash-video.webm` / `.mp4`) via GSAP ScrollTrigger. Reduced-motion / no-GSAP shows `img/griddle-step4.jpg` (finished still, no scrub). Caption: "Photoreal smash sequence · scroll to scrub."
 Menu cards and build preview use Instagram / Google Maps photos only (shake thumb is the menu-board crop above).
 
 ## Demo assumptions (not business claims)

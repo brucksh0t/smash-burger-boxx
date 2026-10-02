@@ -1,3 +1,3 @@
-Illustrative / generated media — NOT used on the live page.
-These photoreal smash frames and scrub videos were produced for an earlier concept.
-They are NOT Boxx kitchen footage. Live hero uses real Instagram & Google Maps photos only.
+Illustrative / photoreal smash frames & scrub video.
+These are the live hero assets (also copied to img/smash-video.* and img/griddle-step*.jpg).
+Photoreal cinematic smash sequence for GSAP ScrollTrigger scrub — not Boxx kitchen footage.
