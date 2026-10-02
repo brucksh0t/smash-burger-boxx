@@ -66,109 +66,14 @@
       <p class="hero__meta"><span>Burgers from <b>$4.50</b></span><span>Thu–Sun · 2–8 PM</span><span>93 Ten Broeck Ave</span></p>
     </div>
 
-    <div class="griddle" aria-hidden="true">
-      <svg class="griddle__svg" viewBox="60 150 520 455" role="presentation">
-        <defs>
-          <linearGradient id="steel" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stop-color="#3b3835"/><stop offset=".45" stop-color="#23211f"/><stop offset="1" stop-color="#141312"/>
-          </linearGradient>
-          <linearGradient id="sheen" x1="0" x2="1">
-            <stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".09"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
-          </linearGradient>
-          <radialGradient id="heat" cx=".5" cy=".55" r=".5">
-            <stop offset="0" stop-color="#ff6a2a" stop-opacity=".28"/><stop offset="1" stop-color="#ff6a2a" stop-opacity="0"/>
-          </radialGradient>
-          <radialGradient id="raw" cx=".4" cy=".35" r=".75">
-            <stop offset="0" stop-color="#d9707a"/><stop offset=".55" stop-color="#b34a55"/><stop offset="1" stop-color="#7d2a33"/>
-          </radialGradient>
-          <radialGradient id="seared" cx=".45" cy=".4" r=".7">
-            <stop offset="0" stop-color="#7a4220"/><stop offset=".6" stop-color="#5a2e14"/><stop offset="1" stop-color="#2e160a"/>
-          </radialGradient>
-          <filter id="meat" x="-20%" y="-20%" width="140%" height="140%">
-            <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="4" result="n"/>
-            <feColorMatrix in="n" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1.1 -.1" result="grain"/>
-            <feComposite in="grain" in2="SourceGraphic" operator="in" result="g2"/>
-            <feBlend in="SourceGraphic" in2="g2" mode="multiply"/>
-          </filter>
-          <filter id="lace" x="-30%" y="-40%" width="160%" height="180%">
-            <feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="3" seed="9" result="t"/>
-            <feDisplacementMap in="SourceGraphic" in2="t" scale="26" xChannelSelector="R" yChannelSelector="G"/>
-          </filter>
-          <linearGradient id="splash" x1="0" x2="1"><stop offset="0" stop-color="#5a5752"/><stop offset=".3" stop-color="#a19d97"/><stop offset=".55" stop-color="#6c6964"/><stop offset=".8" stop-color="#9b9791"/><stop offset="1" stop-color="#4d4a46"/></linearGradient>
-          <linearGradient id="lip" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#7c7872"/><stop offset="1" stop-color="#2c2a27"/></linearGradient>
-          <radialGradient id="seasoned" cx=".5" cy=".55" r=".6"><stop offset="0" stop-color="#000" stop-opacity="0"/><stop offset=".7" stop-color="#0a0806" stop-opacity=".4"/><stop offset="1" stop-color="#000" stop-opacity=".8"/></radialGradient>
-          <radialGradient id="ballhi" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#fff" stop-opacity=".45"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
-          <radialGradient id="crust" cx=".5" cy=".5" r=".5"><stop offset=".78" stop-color="#6b3514"/><stop offset=".92" stop-color="#3b1a07"/><stop offset="1" stop-color="#2a1204"/></radialGradient>
-          <filter id="blur6"><feGaussianBlur stdDeviation="6"/></filter>
-          <linearGradient id="press" x1="0" x2="0" y1="0" y2="1">
-            <stop offset="0" stop-color="#d9d6d1"/><stop offset=".5" stop-color="#9c9893"/><stop offset="1" stop-color="#5d5a56"/>
-          </linearGradient>
-          <linearGradient id="cheeseG" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stop-color="#ffcb3d"/><stop offset="1" stop-color="#f0a511"/>
-          </linearGradient>
-        </defs>
-
-        <!-- griddle plate in 3/4 view -->
-        <g class="g-plate">
-          <path d="M60 236 L580 236 L592 300 L48 300 Z" fill="url(#splash)"/>
-          <path d="M48 298 L592 298 L596 304 L44 304 Z" fill="#8d8983"/>
-          <path d="M44 304 L596 304 L640 466 L0 466 Z" fill="url(#steel)"/>
-          <path d="M44 304 L596 304 L640 466 L0 466 Z" fill="url(#seasoned)" opacity=".7"/>
-          <path d="M140 304 L250 304 L190 466 L60 466 Z" fill="url(#sheen)"/>
-          <path d="M0 466 L640 466 L640 474 L0 474 Z" fill="#b9b5ae"/>
-          <path d="M0 474 L640 474 L640 500 L0 500 Z" fill="url(#lip)"/>
-          <ellipse class="g-heat" cx="320" cy="392" rx="260" ry="70" fill="url(#heat)"/>
-        </g>
-
-        <!-- grease shimmer + shadow -->
-        <ellipse class="g-shadow" cx="320" cy="400" rx="80" ry="16" fill="#000" opacity=".45" filter="url(#blur6)"/>
-
-        <!-- lacy crust (appears on smash) -->
-        <ellipse class="g-lace" cx="320" cy="394" rx="192" ry="52" fill="url(#crust)" filter="url(#lace)" opacity="0"/>
-
-        <!-- the patty: starts as a ball -->
-        <g class="g-patty">
-          <ellipse class="g-patty-edge" cx="320" cy="366" rx="78" ry="62" fill="#2a1409" opacity="0"/>
-          <ellipse class="g-patty-raw" cx="320" cy="360" rx="78" ry="62" fill="url(#raw)" filter="url(#meat)"/>
-          <ellipse class="g-patty-sear" cx="320" cy="360" rx="78" ry="62" fill="url(#seared)" filter="url(#meat)" opacity="0"/>
-          <ellipse class="g-ball-hi" cx="298" cy="334" rx="34" ry="20" fill="url(#ballhi)"/>
-        </g>
-
-        <!-- cheese slice -->
-        <g class="g-cheese" opacity="0">
-          <path class="g-cheese-flat" d="M240 358 L400 358 L424 410 L216 410 Z" fill="url(#cheeseG)"/>
-          <path class="g-cheese-melt" d="M228 366 L412 366 Q434 390 428 414 Q420 432 404 420 Q392 410 378 422 L264 422 Q250 434 236 420 Q222 406 212 416 Q206 390 228 366 Z" fill="url(#cheeseG)" opacity="0"/>
-        </g>
-
-        <!-- sizzle droplets -->
-        <g class="g-sizzle" fill="#f6c77a">
-          <circle cx="320" cy="390" r="3"/><circle cx="320" cy="390" r="2.2"/><circle cx="320" cy="390" r="2.6"/>
-          <circle cx="320" cy="390" r="1.8"/><circle cx="320" cy="390" r="2.4"/><circle cx="320" cy="390" r="2"/>
-          <circle cx="320" cy="390" r="3"/><circle cx="320" cy="390" r="1.6"/><circle cx="320" cy="390" r="2.2"/>
-          <circle cx="320" cy="390" r="2.8"/>
-        </g>
-
-        <!-- steam -->
-        <g class="g-steam" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="7" opacity="0" filter="url(#blur6)">
-          <path d="M270 330 C250 290 290 270 268 226 C250 190 280 170 270 140"/>
-          <path d="M330 330 C312 286 352 264 330 214 C314 176 344 150 332 118"/>
-          <path d="M392 330 C372 292 410 272 392 230 C378 196 402 178 394 150"/>
-        </g>
-
-        <!-- the press -->
-        <g class="g-press">
-          <rect x="300" y="-60" width="40" height="150" rx="10" fill="#1d1b19"/>
-          <rect x="296" y="60" width="48" height="34" rx="6" fill="#2b2826"/>
-          <ellipse cx="320" cy="108" rx="150" ry="30" fill="#6f6b66"/>
-          <path d="M170 108 L470 108 L470 124 Q320 170 170 124 Z" fill="url(#press)"/>
-          <ellipse cx="320" cy="106" rx="150" ry="28" fill="url(#press)"/>
-          <ellipse cx="290" cy="100" rx="70" ry="9" fill="#fff" opacity=".25"/>
-        </g>
-      </svg>
-      <figure class="griddle__photo">
-        <img src="img/ig-burger-window.jpg" alt="" width="1080" height="1080" fetchpriority="high">
-      </figure>
-      <p class="griddle__cap">Illustration: the smash. Photo: The Smashburger Boxx on Instagram.</p>
+    <div class="griddle" aria-label="Smashburger preparation on the griddle">
+      <video class="griddle__video" playsinline muted preload="metadata" poster="img/griddle-step4.jpg">
+        <source src="img/smash-video.webm" type="video/webm">
+        <source src="img/smash-video.mp4" type="video/mp4">
+      </video>
+      <img class="griddle__still" src="img/griddle-step4.jpg" alt="" width="976" height="1093" decoding="async">
+      <div class="griddle__badge" data-video-step>01 · Fresh beef hits the hot griddle</div>
+      <p class="griddle__cap">Photoreal smash sequence · The Smashburger Boxx · Hudson, NY</p>
     </div>
   </div>
 </section>
@@ -264,7 +169,7 @@
       <h2 id="story-h">A red-and-white box <em>on Ten Broeck.</em></h2>
     </header>
     <div class="story__grid">
-      <figure class="ph ph--tall"><img src="img/gm-boxx-closeup.jpg" alt="The Smashburger Boxx: a converted shipping container with a red-and-white striped awning and cartoon burger murals" loading="lazy" width="1050" height="1400"><figcaption>The window, the awning, the murals.</figcaption></figure>
+      <figure class="ph ph--tall"><img src="img/gm-boxx-closeup.jpg" alt="The Smashburger Boxx: a converted shipping container with a red-and-white striped awning" loading="lazy" width="1050" height="1400"><figcaption>The window, the awning, the murals.</figcaption></figure>
       <div class="story__copy">
         <p class="lead">Same address as Hudson Bagels. Same family.</p>
         <p>The smashburger started as a weekday lunch special at Hudson Bagels in January 2025, after months of testing the beef blend, the pickle and a small-batch sauce. It grew into its own spot: a walk-up box on the Hudson Bagels lot with picnic tables out front.</p>

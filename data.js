@@ -41,16 +41,22 @@ window.SBB = {
   ],
   items: [
     { id: 'single', cat: 'burgers', name: 'Single Smash', price: 450, patties: 1, cheese: false, burger: true,
+      img: 'img/ig-burger-sign.jpg',
       desc: 'Comes standard with pickles & our secret sauce.' },
     { id: 'single-cheese', cat: 'burgers', name: 'Single Cheese Smash', price: 500, patties: 1, cheese: true, burger: true,
+      img: 'img/ig-burger-window.jpg',
       desc: 'Comes standard with pickles & our secret sauce.' },
     { id: 'double', cat: 'burgers', name: 'Double Smash', price: 700, patties: 2, cheese: false, burger: true,
+      img: 'img/ig-burger-shake-mural.jpg',
       desc: 'Comes standard with pickles & our secret sauce.' },
     { id: 'double-cheese', cat: 'burgers', name: 'Double Cheese Smash', price: 750, patties: 2, cheese: true, burger: true, popular: true,
+      img: 'img/ig-burger-stacked.jpg',
       desc: 'Comes standard with pickles & our secret sauce.' },
-    { id: 'fries', cat: 'sides', name: 'Crispy Fries', price: 399, img: 'img/gm-box-fries-drink.jpg',
+    { id: 'fries', cat: 'sides', name: 'Crispy Fries', price: 399,
+      img: 'img/gm-box-fries-drink.jpg',
       desc: 'A side of crispy fries.' },
     { id: 'shake', cat: 'sides', name: 'Vanilla Milkshake', price: 599,
+      img: 'img/ig-burger-fries-sign.jpg',
       desc: 'A vanilla shake to go with it.' }
   ]
 };
