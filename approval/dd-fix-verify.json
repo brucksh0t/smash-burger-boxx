@@ -9,7 +9,7 @@
     "img/gm-tray-picnic.jpg",
     "img/ig-burger-sign.jpg"
   ],
-  "shakeImg": "img/menu-vanilla-shake.jpg",
+  "shakeImg": null,
   "orderH": 44,
   "orderW": 78.296875,
   "orderMinH": "44px",
