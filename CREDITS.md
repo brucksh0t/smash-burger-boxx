@@ -33,4 +33,4 @@ Menu cards and build preview use Instagram / Google Maps photos only; the vanill
 ## Tech
 Static HTML/CSS/JS. GSAP 3.12.5 + ScrollTrigger (jsDelivr). Fonts: Archivo, Instrument Serif (Google Fonts). Cart and last order are saved in localStorage.
 Add `?now=2026-09-26T17:05` to the URL to preview the site at a given New York time (useful for demos while the shop is closed).
-The real backend goes into `submitOrder()` in order.js; primary handoff is **SpotOn Order** (Hudson Bagels family POS). Other processors are noted only as fallbacks in the comments.
+The real backend goes into `submitOrder()` in order.js; live ordering continues at https://order.spoton.com/ddi-hudson-bagels-7283/hudson-ny/61e70ec19adef33e920bba1a. That SpotOn page is Hudson Bagels (same family, 93 Ten Broeck), not a Smash Burger Boxx menu, until the Boxx has its own SpotOn menu.

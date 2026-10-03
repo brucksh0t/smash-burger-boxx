@@ -344,12 +344,12 @@
         ${prefs.mode === 'delivery' ? `<label class="field"><span>Delivery address</span><input name="addr" autocomplete="street-address" required value="${esc(prefs.addr)}" placeholder="Street, town"><em class="err" hidden>Add a delivery address.</em></label>` : ''}
         <label class="check"><input type="checkbox" name="sms" ${prefs.sms ? 'checked' : ''}><span>Text me when it's ready</span></label>
         <div class="pay">
-          <b>Payment · SpotOn Order (demo)</b>
-          <p>In a live launch, checkout hands off to <strong>SpotOn Order</strong> (Hudson Bagels family already uses SpotOn), so card details never touch this site. <strong>This demo takes no payment</strong> and sends nothing to the kitchen.</p>
+          <b>Payment</b>
+          <p>Payment continues on SpotOn. This page never charges a card and never sends an order to the kitchen. The SpotOn page is Hudson Bagels (same family, 93 Ten Broeck), not a Smash Burger Boxx menu; Smash Burger Boxx does not have its own SpotOn menu yet.</p>
         </div>
       </form>
       ${sumHTML(t)}`;
-    const foot = `<button class="btn btn--red btn--block btn--lg" type="button" data-place>Place demo order · ${money(t.total)}</button><p class="fine">Demo only: nothing is sent to the kitchen and nothing is charged.</p>`;
+    const foot = `<a class="btn btn--red btn--block btn--lg" href="https://order.spoton.com/ddi-hudson-bagels-7283/hudson-ny/61e70ec19adef33e920bba1a" target="_blank" rel="noopener">Continue on SpotOn</a><p class="fine">This page takes no payment.</p>`;
     return { body, foot };
   }
   function renderDone(o) {
@@ -425,8 +425,7 @@
    *      Map data.js item/modifier ids to SpotOn menu items; server creates the order via SpotOn
    *      online ordering / payment link for the location; tickets land on SpotOn POS/KDS.
    *      Card details stay on SpotOn. This demo never calls SpotOn.
-   *  • Other processors (only if SpotOn is not used): Square Online / Stripe Checkout / Toast Orders
-   *      can be swapped behind the same contract — not the planned path for this shop.
+   *  • Live order link is the Hudson Bagels SpotOn URL above; this page does not charge cards.
    *  Contract: resolve { ok, number, readyAt, redirectUrl? }; if redirectUrl is present, send the guest there.
    */
   async function submitOrder(order) {
