@@ -343,13 +343,9 @@
         <label class="field"><span>Email <small>optional, for a receipt</small></span><input name="email" type="email" autocomplete="email" value="${esc(prefs.email)}" placeholder="you@example.com"><em class="err" hidden>That email doesn't look right.</em></label>
         ${prefs.mode === 'delivery' ? `<label class="field"><span>Delivery address</span><input name="addr" autocomplete="street-address" required value="${esc(prefs.addr)}" placeholder="Street, town"><em class="err" hidden>Add a delivery address.</em></label>` : ''}
         <label class="check"><input type="checkbox" name="sms" ${prefs.sms ? 'checked' : ''}><span>Text me when it's ready</span></label>
-        <div class="pay">
-          <b>Payment</b>
-          <p>This page never charges a card and never sends an order to the kitchen.</p>
-        </div>
       </form>
       ${sumHTML(t)}`;
-    const foot = `<a class="btn btn--red btn--block btn--lg" href="https://order.spoton.com/ddi-hudson-bagels-7283/hudson-ny/61e70ec19adef33e920bba1a" target="_blank" rel="noopener">Order now.</a><p class="fine">This page takes no payment.</p>`;
+    const foot = `<a class="btn btn--red btn--block btn--order" href="https://order.spoton.com/ddi-hudson-bagels-7283/hudson-ny/61e70ec19adef33e920bba1a" target="_blank" rel="noopener">ORDER NOW</a>`;
     return { body, foot };
   }
   function renderDone(o) {
