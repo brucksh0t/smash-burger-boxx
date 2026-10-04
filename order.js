@@ -345,11 +345,11 @@
         <label class="check"><input type="checkbox" name="sms" ${prefs.sms ? 'checked' : ''}><span>Text me when it's ready</span></label>
         <div class="pay">
           <b>Payment</b>
-          <p>Payment continues on SpotOn. This page never charges a card and never sends an order to the kitchen. The SpotOn page is Hudson Bagels (same family, 93 Ten Broeck), not a Smash Burger Boxx menu; Smash Burger Boxx does not have its own SpotOn menu yet.</p>
+          <p>This page never charges a card and never sends an order to the kitchen. The pickup page is Hudson Bagels (same family, 93 Ten Broeck), not a Smash Burger Boxx menu.</p>
         </div>
       </form>
       ${sumHTML(t)}`;
-    const foot = `<a class="btn btn--red btn--block btn--lg" href="https://order.spoton.com/ddi-hudson-bagels-7283/hudson-ny/61e70ec19adef33e920bba1a" target="_blank" rel="noopener">Continue on SpotOn</a><p class="fine">This page takes no payment.</p>`;
+    const foot = `<a class="btn btn--red btn--block btn--lg" href="https://order.spoton.com/ddi-hudson-bagels-7283/hudson-ny/61e70ec19adef33e920bba1a" target="_blank" rel="noopener">Order now.</a><p class="fine">This page takes no payment.</p>`;
     return { body, foot };
   }
   function renderDone(o) {
