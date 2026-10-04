@@ -345,7 +345,7 @@
         <label class="check"><input type="checkbox" name="sms" ${prefs.sms ? 'checked' : ''}><span>Text me when it's ready</span></label>
         <div class="pay">
           <b>Payment</b>
-          <p>This page never charges a card and never sends an order to the kitchen. The pickup page is Hudson Bagels (same family, 93 Ten Broeck), not a Smash Burger Boxx menu.</p>
+          <p>This page never charges a card and never sends an order to the kitchen.</p>
         </div>
       </form>
       ${sumHTML(t)}`;
